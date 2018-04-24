@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> //jest super bardzo fajnie się bawimy
 struct dane{
     char imie[30];
     char nazwisko[40];
