@@ -4,7 +4,7 @@
 struct baza{
     int ilosc_r;
     struct ksiazka*wsk;
-};
+};//struktura korzystająca ze struktury książka
 struct ksiazka{
     char imie[30];
     char nazwisko[40];
