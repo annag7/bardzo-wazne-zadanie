@@ -4,7 +4,7 @@ struct dane{
     char imie[30];
     char nazwisko[40];
     int rok_ur;
-    };
+    };//moje bardzo ważne dane
 struct lista{
     struct dane d;
     struct lista *nast;
