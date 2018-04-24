@@ -1,0 +1,9 @@
+struct Foo{
+    void fizz(){}
+};
+ 
+struct Bar : Foo{
+    void fizz() override{}
+};
+ 
+int main(){}
