@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+int** createMatrix(int n);
+int main()
+{
+    int n;
+    printf("Podaj wymiar macierzy nxn:\n");
+    scanf("%d",&n);
+    int**tab;
+    int**pdest;
+    createContinousMatrix(&tab,n);
+    if(tab!=NULL)
+    {
+        fillMatrix(tab,n);
+        printf("Oryginalna macierz %dx%d:\n",n,n);
+        printMatrix(tab,n);
+        printf("\n");
+        copyMatrix(&pdest,tab,n);
+        printf("Skopiowana macierz:\n");
+        printMatrix(pdest,n);
+        free(tab);
+        free(pdest);
+    }
+    return 0;
+}
+
+int** createMatrix(int n)
+{
+    int i;
+    int**tab;
+    tab=(int **)malloc(n*sizeof(int *));
+    if(tab!=NULL)
+    {
+        for(i=0;i<n;i++)
+        {
+            tab[i]=(int*)malloc(n*sizeof(int));
+            if(tab==NULL)
+            {
+            deleteMatrix(tab,i);
+            return NULL;
+            }
+        }
+    return tab;
+    }
+}
