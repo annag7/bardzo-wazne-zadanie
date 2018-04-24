@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct dane{
+    char imie[30];
+    char nazwisko[40];
+    int rok_ur;
+    };
+struct lista{
+    struct dane d;
+    struct lista *nast;
+    };
+struct lista *dodaj(struct lista *head, struct dane *nel)
+{
+    struct lista*nowa=malloc(sizeof(struct lista));
+    if(nowa!=NULL){
+        nowa->d=*nel;
+        nowa->nast=head;
+        return nowa;
+    }
+    return NULL;
+}
+void wypisz(struct lista *head)
+{
+    struct lista*p;
+    for(p=head;p!=NULL;p=p->nast)
+    {
+        struct dane*tmp=&p->d;
+        printf("Imie:%s\n",tmp->imie);
+        printf("Nazwisko:%s\n",tmp->nazwisko);
+        printf("Rok urodzenia:%d\n\n",tmp->rok_ur);
+    }
+}
