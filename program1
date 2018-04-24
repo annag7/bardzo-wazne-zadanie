@@ -5,7 +5,7 @@
 char deleteFirstChar(char** pstr);
 int main()
 {
-    char*napis;
+    char*napis; //dzien dobty działa wszystko
     char z1;
     napis=(char*)malloc(R*sizeof(char));
     if(napis!=NULL)
