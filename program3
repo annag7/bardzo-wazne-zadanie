@@ -5,7 +5,7 @@ int main()
 {
     int n;
     printf("Podaj wymiar macierzy nxn:\n");
-    scanf("%d",&n);
+    scanf("%d",&n);//podano wymiar macierzy
     int**tab;
     int**pdest;
     createContinousMatrix(&tab,n);
