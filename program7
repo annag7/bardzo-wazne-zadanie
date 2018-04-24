@@ -9,7 +9,7 @@ void differenceBetweenTimePeriod(struct TIME t1, struct TIME t2, struct TIME *di
 
 int main()
 {
-    struct TIME startTime, stopTime, diff;
+    struct TIME startTime, stopTime, diff; //bardzo dobre wszystko jest
 
     printf("Enter start time: \n");
     printf("Enter hours, minutes and seconds respectively: ");
