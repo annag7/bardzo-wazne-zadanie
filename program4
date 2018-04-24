@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct baza{
+    int ilosc_r;
+    struct ksiazka*wsk;
+};
+struct ksiazka{
+    char imie[30];
+    char nazwisko[40];
+    long numer;
+};
+
+int dodaj(struct baza *b, struct ksiazka *new_k)
+{
+   struct ksiazka *dtab;
+   int ilosc_r=b->ilosc_r;
+   dtab=malloc((ilosc_r+1)*sizeof(struct ksiazka));
+   if(dtab!=NULL)
+   {
+    int i;
+    for(i=0;i<ilosc_r;i++) dtab[i]= b->wsk[i];
+    dtab[ilosc_r]=*new_k;
+    free(b->wsk);
+    b->wsk=dtab;
+    b->ilosc_r++;
+    return 0;
+   }
+   return -1;
+}
