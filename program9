@@ -2,7 +2,7 @@
 void main()
 {
     int array[10];
-    int i, j, num, temp, keynum;
+    int i, j, num, temp, keynum; // khvxder5696809
     int low, mid, high;
     printf("Enter the value of num \n");
     scanf("%d", &num);
