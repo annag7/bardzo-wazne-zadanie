@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+int createContinousMatrix(int*** atab, int n);
+int main()
+{
+    int n;
+    printf("Podaj wymiar macierzy nxn:\n");
+    scanf("%d",&n);
+    int**tab;
+    int**pdest;
+    createContinousMatrix(&tab,n);
+    if(tab!=NULL)
+    {
+        fillMatrix(tab,n);
+        printf("Oryginalna macierz %dx%d:\n",n,n);
+        printMatrix(tab,n);
+        printf("\n");
+        copyMatrix(&pdest,tab,n);
+        printf("Skopiowana macierz:\n");
+        printMatrix(pdest,n);
+        free(tab);
+        free(pdest);
+    }
+    return 0;
+}
+
+int createContinousMatrix(int*** atab, int n)
+{
+    int i;
+    int*wsk;
+    wsk=(int*)malloc(n*n*sizeof(int *));
+    if(wsk!=NULL)
+    {
+        *atab=malloc(n*sizeof(int*));
+        for(i=0;i<n;i++)
+        {
+            (*atab)[i]=&wsk[i*n];
+        }
+        return 0;
+    }
+    return -1;
+
+}
