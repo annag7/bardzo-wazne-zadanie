@@ -1,7 +1,7 @@
 #include <stdio.h>
  
 /* function declaration */
-int max(int num1, int num2);
+int max(int num1, int num2);//jakaś funkcja
  
 int main () {
 
