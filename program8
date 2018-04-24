@@ -4,7 +4,7 @@ int main()
     int  a[25];
     int  i, num, pos, x, flag = 0;
     printf("Please enter number of elements\n");
-    scanf("%d", &num);
+    scanf("%d", &num);//liczba elementów
     printf("Enter the elements one by one\n");
     for(i=0; i<num; i++)
     {
