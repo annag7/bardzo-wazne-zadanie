@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include<string.h>
+#define R 100
+char deleteFirstChar(char** pstr);
+int main()
+{
+    char*napis;
+    char z1;
+    napis=(char*)malloc(R*sizeof(char));
+    if(napis!=NULL)
+    {
+    printf("Podaj napis:\n");
+    fgets(napis,R,stdin);
+    int i;
+    for(i=0;napis[i]!='\0';i++)
+    {
+        if(napis[i]=='\n') napis[i]='\0';
+    }
+    printf("Wprowadzony napis: \n");
+    puts(napis);
+    z1=deleteFirstChar(&napis);
+    puts(napis);
+    printf("Usuniêty znak:%c",z1);
+
+    free(napis);
+    return 0;
+    }
+    return 0;
+}
+char deleteFirstChar(char** pstr)
+{
+   char*dtab;
+   int d=strlen(*pstr);
+   dtab=(char*)malloc(d*sizeof(char));
+   if(dtab!=NULL)
+    {
+        strcpy(dtab,*pstr+1);
+        char z=(*pstr)[0];
+        free(*pstr);
+        *pstr=dtab;
+        return z;
+    }
+    return 0;
+}
+
