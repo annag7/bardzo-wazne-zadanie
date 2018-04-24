@@ -1,9 +1,9 @@
 #include <stdio.h>
-struct TIME
+struct TIME //czas
 {
-  int seconds;
-  int minutes;
-  int hours;
+  int seconds;//sekundy
+  int minutes;//minuty
+  int hours;//godziny
 };
 void differenceBetweenTimePeriod(struct TIME t1, struct TIME t2, struct TIME *diff);
 
